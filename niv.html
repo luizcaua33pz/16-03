@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<title>Feliz Aniversário</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+overflow:hidden;
+}
+
+.cartao{
+background:white;
+padding:40px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+color:#ff4081;
+font-size:40px;
+}
+
+button{
+padding:15px 25px;
+font-size:18px;
+background:#ff4081;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e73370;
+}
+
+.confete{
+position:absolute;
+width:10px;
+height:10px;
+background:red;
+animation:cair 5s linear infinite;
+}
+
+@keyframes cair{
+0%{transform:translateY(-100px)}
+100%{transform:translateY(100vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cartao">
+
+<h1>🎂 Feliz Aniversário Jaiane!</h1>
+
+<p>Tenho uma surpresa especial para você 🎁</p>
+
+<button onclick="abrir()">Abrir Surpresa</button>
+
+</div>
+
+<script>
+
+function abrir(){
+window.location.href="surpresa.html"
+}
+
+for(let i=0;i<60;i++){
+
+let c=document.createElement("div")
+
+c.className="confete"
+
+c.style.left=Math.random()*100+"vw"
+
+c.style.background=
+"rgb("+
+Math.random()*255+","+
+Math.random()*255+","+
+Math.random()*255+")"
+
+c.style.animationDuration=3+Math.random()*5+"s"
+
+document.body.appendChild(c)
+
+}
+
+</script>
+
+</body>
+</html>
